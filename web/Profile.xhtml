@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>User Profile - Gold Investment</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"/>
+    <h:outputStylesheet library="CSS" name="Profile.css"/>
+</h:head>
+<h:body>
+    <h:messages globalOnly="true" />
+    <!-- Header Section -->
+    <header class="user-header">
+        <div class="user-info">
+            <img src="images/Woman.jpeg" alt="User Profile" class="user-img"/>
+            <div class="user-details">
+                <h2>#{profileBean.user.name}</h2>
+                <p>#{profileBean.user.rekening}</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profile Overview -->
+    <section class="profile-overview">
+        <h3>Your Profile</h3>
+        <h:form id="user-profile-form" class="profile-form">
+            <div class="input-box">
+                <h:outputLabel for="full-name" value="Full Name"/>
+                <h:inputText id="full-name" value="#{profileBean.user.name}" disabled="#{!profileBean.editMode}" />
+            </div>
+            <div class="input-box">
+                <h:outputLabel for="nik" value="NIK"/>
+                <h:inputText id="nik" value="#{profileBean.user.nik}" disabled="#{!profileBean.editMode}" />
+            </div>
+            <div class="input-box">
+                <h:outputLabel for="address" value="Address"/>
+                <h:inputText id="address" value="#{profileBean.user.address}" disabled="#{!profileBean.editMode}" />
+            </div>
+            <div class="input-box">
+                <h:outputLabel for="phone" value="Phone Number"/>
+                <h:inputText id="phone" value="#{profileBean.user.phone}" disabled="#{!profileBean.editMode}" />
+            </div>
+            <div class="input-box">
+                <h:outputLabel for="dob" value="Date of Birth"/>
+                <h:inputText id="dob" value="#{profileBean.user.dob}" disabled="#{!profileBean.editMode}" />
+            </div>
+            <div class="input-box">
+                <h:outputLabel for="username" value="Username"/>
+                <h:inputText id="username" value="#{profileBean.user.username}" disabled="#{!profileBean.editMode}" />
+            </div>
+            <div class="input-box">
+                <h:outputLabel for="password" value="Password"/>
+                <div class="password-container">
+                    <h:inputSecret id="password" disabled="#{!profileBean.editMode}" />
+                </div>
+            </div>
+
+            <h:commandButton id="edit-button" value="Edit"  action="#{profileBean.toggleEditMode}" 
+                              class="btn" rendered="#{!profileBean.editMode}" />
+            <h:commandButton id="save-button" value="Save"
+                             action="#{profileBean.saveProfile}" class="btn" rendered="#{profileBean.editMode}" />
+        </h:form>
+    </section>
+
+    !-- JS -->
+    <script src="js/Profile.js"></script>
+    
+    
+    <!-- Footer Navigation -->
+    <h:form>
+    <footer class="footer-nav">
+        <div class="footer-btn">
+            <h:commandLink value="Home" action="User" class="footer-link" />
+        </div>
+        <div class="footer-btn">
+            <h:commandLink value="Log Out" action="logoutPage" class="footer-link" />
+        </div>
+        <div class="footer-btn">
+            <h:commandLink value="Profile" action="Profile" class="footer-link" />
+        </div>
+    </footer>
+    </h:form>
+    </h:body>
+</html>

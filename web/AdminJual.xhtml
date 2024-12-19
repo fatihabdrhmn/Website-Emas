@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"/>
+    <h:outputStylesheet library="CSS" name="admin.css"/>
+    <title>Gold Invesment</title>
+</h:head>
+
+<body>
+    <h:form>
+        <header>
+            <h:outputLink value="#" class="Logo">
+                <i class='bx bx-money-withdraw'></i>Gold Invesment.
+            </h:outputLink>
+            <nav class="navbar">
+                <h:outputLink value="admin.xhtml">Buy</h:outputLink>
+                <h:outputLink value="adminjual.xhtml">Sell</h:outputLink>
+            </nav>
+        </header>
+        
+       
+        
+        <section class="process" id="process">
+            <h3 class="sub-heading">Riwayat Penjualan</h3>
+            <h1 class="heading">Admin</h1>
+            
+            <!-- Form Search -->
+            <h:inputText value="#{reservationBean.search}">
+                <f:passThroughAttribute value="placeholder" name="Search by Name, Phone, Email"/>
+            </h:inputText>
+            <h:commandButton value="Search" action="#{reservationBean.searchRecords}"/>
+            
+            <f:set
+
+            <h:dataTable value="#{reservationBean.reservations}" var="rs">
+                <h:column>
+                    <f:facet name="header">ID</f:facet>
+                    <h:outputText value="#{rs.idReservation}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Username</f:facet>
+                    <h:outputText value="#{rs.firstName}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">NIK</f:facet>
+                    <h:outputText value="#{rs.lastName}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Phone</f:facet>
+                    <h:outputText value="#{rs.phone}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Total</f:facet>
+                    <h:outputText value="#{rs.email}"/>
+                </h:column>
+                </h:column>
+            </h:dataTable>
+        </section>
+    </h:form>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="JS/Restoku.js"></script>
+</body>
+</html>

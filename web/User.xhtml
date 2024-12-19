@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" lang="en"
+      >
+
+<h:head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Page - Gold Investment</title>
+    <h:outputStylesheet library="CSS" name="user.css"/>
+</h:head>
+
+<h:body>
+    <!-- Header Section -->
+    <header class="user-header">
+        <div class="user-info">
+            <img src="images/Woman.jpeg" alt="User Profile" class="user-img" />
+            <div class="user-details">
+                <h2>#{profileBean.user.name}</h2>
+                <p>ID: #{profileBean.user.id}</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Balance Overview -->
+    <h:form>
+    <section class="balance-overview">
+        <div class="balance-box">
+            <h3>Your Gold Balance</h3>
+            <p class="balance">#{profileBean.currentGold/1461000} grams</p>
+            <p class="balance-value">Rp #{profileBean.currentGold}</p>
+        </div>
+        <div class="action-buttons">
+            <h:commandLink value="Sell Gold" action="Jual" class="btn" />
+            <h:commandLink value="Buy Gold" action="Beli" class="btn" />
+        </div>
+    </section>
+    </h:form>
+
+    <!-- Footer Navigation -->
+    <h:form>
+    <footer class="footer-nav">
+        <div class="footer-btn">
+            <h:commandLink value="Home" action="User" class="footer-link" />
+        </div>
+        <div class="footer-btn">
+            <h:commandLink value="Log Out" action="index" class="footer-link" />
+        </div>
+        <div class="footer-btn">
+            <h:commandLink value="Profile" action="Profile" class="footer-link" />
+        </div>
+    </footer>
+    </h:form>
+        
+</h:body>
+</html>

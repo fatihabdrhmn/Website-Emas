@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+:root {
+    --orange: #A1D6B2;
+    --light-gray: #f5f5f5;
+    --dark-gray: #333;
+    --black: #000;
+    --white: #fff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* All */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    transition: all .3s ease;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-gray);
+}
+
+.gold-selling-page {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 3rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.selling-title {
+    font-size: 2.6rem;
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+.step-indicator {
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--dark-gray);
+    margin-bottom: 2.5rem;
+}
+
+.selling-details {
+    padding: 2rem;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+.purchase-option {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.purchase-option label {
+    color: var(--dark-gray);
+    display: flex;
+    align-items: center;
+}
+
+.purchase-option input {
+    margin-right: 0.8rem;
+}
+
+.sender-account {
+    margin-bottom: 2.5rem;
+}
+
+.sender-account label {
+    font-size: 1.6rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+
+.receiver-account {
+    margin-bottom: 2.5rem;
+}
+
+.receiver-account label {
+    font-size: 1.6rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+
+.input-field, select {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.8rem;
+    border: 2px solid var(--light-gray); 
+    border-radius: .8rem;
+    background-color: var(--white);
+    color: var(--dark-gray);
+    margin-top: 0.7rem;
+    transition: border-color 0.3s ease; 
+}
+
+.input-field:focus, select:focus {
+    border-color: var(--orange); 
+    outline: none; 
+}
+
+.gold-price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}
+
+.gold-price p {
+    font-size: 1.8rem;
+    color: var(--dark-gray);
+}
+
+.price {
+    font-size: 2rem;
+    color: var(--orange);
+}
+
+.selling-amount {
+    margin-bottom: 2.5rem;
+}
+
+.selling-amount label {
+    font-size: 1.6rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.amount-options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.amount-options .input-field {
+    width: 48%;
+    padding: 1.2rem;
+}
+
+.terms {
+    font-size: 1.6rem;
+    color: var(--dark-gray);
+    margin-bottom: 2.5rem;
+}
+
+.terms a {
+    color: var(--orange);
+}
+
+.btn.next-btn {
+    width: 100%;
+    padding-top: 1.5rem;
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: var(--white);
+    background: var(--orange);
+    border-radius: .5rem;
+    text-align: center;
+    cursor: pointer;
+    padding: .8rem 3rem;
+    text-decoration: none;
+}
+
+.btn.next-btn:hover {
+    background: var(--dark-gray);
+    letter-spacing: .1rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .gold-selling-page {
+        padding: 2rem;
+    }
+
+    .selling-title {
+        font-size: 2.2rem;
+    }
+
+    .step-indicator {
+        font-size: 1.4rem;
+    }
+
+    .purchase-option {
+        flex-direction: column;
+        font-size: 1.6rem;
+    }
+
+    .purchase-option label {
+        margin-bottom: 1rem;
+    }
+
+    .purchase-amount {
+        margin-bottom: 2rem;
+    }
+
+    .gold-price p {
+        font-size: 1.6rem;
+    }
+
+    .price {
+        font-size: 1.8rem;
+    }
+
+    .amount-options {
+        flex-direction: column;
+    }
+
+    .amount-options .input-field {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gold-purchase-page {
+        padding: 1.5rem;
+    }
+
+    .purchase-title {
+        font-size: 2rem;
+    }
+
+    .step-indicator {
+        font-size: 1.2rem;
+    }
+
+    .purchase-option {
+        font-size: 1.4rem;
+    }
+
+    .input-field {
+        font-size: 1.4rem;
+        padding: 1rem;
+    }
+
+    .gold-price p {
+        font-size: 1.4rem;
+    }
+
+    .price {
+        font-size: 1.6rem;
+    }
+
+    .btn.next-btn {
+        padding: 1.2rem;
+        font-size: 1.6rem;
+    }
+}

@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --orange: #A1D6B2;
+    --light-gray: #f5f5f5;
+    --dark-gray: #333;
+    --black: #192a56;
+    --white: #fff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* All */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    transition: all .2s linear;
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+}
+
+h2, h3 {
+    color: var(--black);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Button Styles */
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: var(--white);
+    background: var(--black);
+    border-radius: .8rem;
+    padding: .8rem 3rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--orange);
+    letter-spacing: .1rem;
+}
+
+/* Header Section */
+.user-header {
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.user-header .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-header .user-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.user-header .user-details h2 {
+    font-size: 3rem;
+}
+
+.user-header .user-details p {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* Profile Overview */
+.profile-overview {
+    padding: 2.5rem;
+    background-color: var(--white);
+    margin: 2rem 0;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.profile-overview h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Profile Form */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box {
+    margin-bottom: 1.2rem; /* Mengurangi jarak antar input box */
+}
+
+.input-box label {
+    display: block;
+    font-size: 1.4rem; /* Mengecilkan ukuran label */
+    margin-bottom: .4rem;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 0.8rem; /* Mengecilkan text box */
+    border-radius: .5rem;
+    border: 1px solid var(--light-gray);
+    font-size: 1.4rem; /* Mengecilkan ukuran teks */
+    background-color: #eee;
+    transition: border-color 0.2s ease;
+}
+
+.input-box input:focus {
+    border-color: var(--orange);
+}
+
+.input-box input[disabled] {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+}
+
+/* Styling untuk kontainer password */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: var(--dark-gray);
+    transition: color 0.2s ease;
+}
+
+.eye-icon:hover {
+    color: var(--orange);
+}
+
+/* Footer Navigation */
+.footer-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-btn {
+    text-align: center;
+}
+
+.footer-link {
+    font-size: 1.6rem;
+    color: var(--dark-gray);
+    padding: 0.5rem 1rem;
+    display: block;
+    border-radius: 1rem;
+}
+
+.footer-link:hover {
+    color: var(--orange);
+    background-color: var(--light-gray);
+}
+
+
+@media (max-width: 768px) {
+    .user-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .user-img {
+        margin-bottom: 1rem;
+    }
+
+    .profile-overview {
+        margin: 1rem 0;
+    }
+
+    .input-box input {
+        font-size: 1.2rem;
+    }
+}

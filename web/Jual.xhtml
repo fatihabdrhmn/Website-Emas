@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" lang="en">
+
+<h:head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jual Tabungan Emas</title>
+    <h:outputStylesheet library="CSS" name="Jual.css" />
+</h:head>
+
+<h:body>
+    <h:form>
+        <div class="gold-selling-page">
+            <h2 class="selling-title">Jual Tabungan Emas</h2>
+            <p class="step-indicator">Langkah 1 dari 3 - Penjualan</p>
+
+            <div class="selling-details">
+                <h3 class="section-title">Detail Penjualan</h3>
+
+                <!-- Rekening Pengirim -->
+                <div class="sender-account">
+                    <label for="sender">Rekening Pengirim</label>
+                    <h:selectOneMenu id="sender" class="input-field" value="#{emasBean.jualSender}">
+                        <f:selectItem itemLabel="Pilih rekening pengirim" itemValue="" />
+                        <f:selectItem itemLabel="Rekening 1" itemValue="1" />
+                        <f:selectItem itemLabel="Rekening 2" itemValue="2" />
+                        <f:selectItem itemLabel="Rekening 3" itemValue="3" />
+                    </h:selectOneMenu>
+                </div>
+
+                <!-- Harga Emas  -->
+                <div class="gold-price">
+                    <p>Harga Emas</p>
+                    <p class="price">Rp 1,461,000/gram</p>
+                </div>
+
+                <!-- Jumlah Penjualan -->
+                <div class="selling-amount">
+                    <label for="rupiahAmount">Jumlah Penjualan</label>
+                    <div class="amount-options">
+                        <h:inputText value="#{emasBean.jualAmount}" id="rupiahAmount" class="input-field" onkeyup="updateGramAmount()">
+                            <f:passThroughAttribute value="placeholder" name="Rupiah"/>
+                        </h:inputText>
+                        <h:inputText id="gramAmount" class="input-field" onkeyup="updateRupiahAmount()">
+                            <f:passThroughAttribute value="placeholder" name="Gram"/>
+                        </h:inputText>
+                    </div>
+                </div>
+
+                <div class="receiver-account">
+                    <label for="receiver">Rekening Penerima</label>
+                    <h:selectOneMenu id="receiver" class="input-field" value="#{emasBean.jualReceiver}">
+                        <f:selectItem itemLabel="Pilih rekening penerima" itemValue="" />
+                        <f:selectItem itemLabel="Rekening A" itemValue="A" />
+                        <f:selectItem itemLabel="Rekening B" itemValue="B" />
+                    </h:selectOneMenu>
+                </div>
+
+                <!-- Syarat dan Ketentuan -->
+                <div class="terms">
+                    <h:selectBooleanCheckbox id="terms" />
+                    <label for="terms">Saya setuju dengan <a href="#">Syarat dan Ketentuan</a> yang berlaku</label>
+                </div>
+
+                <!-- Tombol Selanjutnya -->
+                <h:commandButton value="Selanjutnya" action="#{emasBean.prepareConfirmJual}" class="btn next-btn" />
+            </div>
+        </div>
+    </h:form>
+    <script>
+        function updateGramAmount() {
+            const rupiahInput = document.getElementById('j_idt6:rupiahAmount');
+            const gramInput = document.getElementById('j_idt6:gramAmount');
+
+            // Set the conversion rate from Rupiah to Gram (example: 1 gram = 100000 Rupiah)
+            const conversionRate = 1461000; // You can change this rate as needed
+
+            // Parse the input value from Rupiah to an integer
+            const rupiahValue = parseFloat(rupiahInput.value.replace(/,/g, '')) || 0;
+
+            // Calculate the equivalent grams
+            const gramValue = rupiahValue / conversionRate;
+
+            // Update the gramAmount field with the calculated value (formatted to 2 decimals)
+            gramInput.value = gramValue.toFixed(2);
+        }
+        function updateRupiahAmount() {
+            const rupiahInput = document.getElementById('j_idt6:rupiahAmount');
+            const gramInput = document.getElementById('j_idt6:gramAmount');
+
+            // Set the conversion rate from Rupiah to Gram (example: 1 gram = 100000 Rupiah)
+            const conversionRate = 1461000; // You can change this rate as needed
+
+            // Parse the input value from Rupiah to an integer
+            const gramValue = parseFloat(gramInput.value.replace(/,/g, '')) || 0;
+
+            // Calculate the equivalent grams
+            const rupiahValue = gramValue * conversionRate;
+
+            // Update the gramAmount field with the calculated value (formatted to 2 decimals)
+            rupiahInput.value = rupiahValue.toFixed(2);
+        }
+    </script>
+</h:body>
+</html>

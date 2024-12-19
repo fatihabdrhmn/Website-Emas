@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      lang="en"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <h:outputStylesheet library="CSS" name="SignUp.css"/>
+</h:head>
+
+    
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="images/gold.jpeg" alt="Sign up image" />
+        </div>
+        <div class="form-container">
+            <h3>Sign Up</h3>
+
+            <h:form>
+                <div class="input-box">
+                    <label for="name">Name</label>
+                    <h:inputText value="#{userBean.user.name}" id="name" required="true">
+                        <f:passThroughAttribute name="placeholder" value="Your Name"/>
+                    </h:inputText>
+                </div>
+
+                <div class="input-box">
+                    <label for="nik">NIK</label>
+                    <h:inputText value="#{userBean.user.nik}" id="nik" required="true">
+                        <f:passThroughAttribute name="placeholder" value="Your NIK"/>
+                    </h:inputText>
+                </div>
+
+                <div class="input-box">
+                    <label for="address">Address</label>
+                    <h:inputText value="#{userBean.user.address}" id="address" required="true">
+                        <f:passThroughAttribute name="placeholder" value="Your Address"/>
+                    </h:inputText>
+                </div>
+
+                <div class="input-box">
+                    <label for="phone">Phone Number</label>
+                    <h:inputText value="#{userBean.user.phone}" id="phone" required="true">
+                        <f:passThroughAttribute name="placeholder" value="Your Phone Number"/>
+                    </h:inputText>
+                </div>
+
+                <div class="input-box">
+                    <label for="dob">Date of Birth</label>
+                    <h:inputText value="#{userBean.user.dob}" id="dob" required="true">
+                        <f:convertDateTime pattern="yyyy-MM-dd"/>
+                        <f:passThroughAttribute name="type" value="date"/>
+                    </h:inputText>
+                    <h:message for="dob" style="color:red"/>
+                </div>
+
+                <div class="input-box">
+                    <label for="username">Username</label>
+                    <h:inputText value="#{userBean.user.username}" id="username" required="true">
+                        <f:passThroughAttribute name="placeholder" value="Your Username"/>
+                    </h:inputText>
+                </div>
+
+               <div class="input-box">
+                    <label for="email">Email</label>
+                    <h:inputText value="#{userBean.user.email}" id="email" required="true" requiredMessage="Email is required">
+                        <f:passThroughAttribute name="placeholder" value="Your Email"/>
+                        <f:validateRegex pattern="^[\w.%+-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$" />
+                    </h:inputText>
+                    <h:message for="email" style="color:red" />
+                </div>
+
+                <div class="input-box">
+                    <label for="password">Password</label>
+                    <h:inputSecret value="#{userBean.user.password}" id="password" required="true">
+                        <f:passThroughAttribute name="placeholder" value="Your Password"/>
+                    </h:inputSecret>
+                </div>
+
+                <h:commandButton value="Sign Up" action="#{userBean.register}" class="btn" />
+            </h:form>
+
+            <p class="sign-in-text">Have an account? <a href="SignIn.xhtml">Sign In</a></p>
+        </div>
+    </div>
+<script>
+        // Show notification if there is an error message
+        
+        var errorMessage = "#{userBean.errorMessage}";
+        var successMessage = "#{userBean.successMessage}";
+        if (errorMessage) {
+            alert(errorMessage);
+        }
+        if (successMessage) {
+            alert(successMessage);
+        }
+    </script>
+</body>
+
+</html>

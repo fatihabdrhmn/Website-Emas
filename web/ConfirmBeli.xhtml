@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" lang="en">
+
+<h:head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konfirmasi Tabungan Emas</title>
+    <h:outputStylesheet library="CSS" name="ConfirmBeli.css" />
+</h:head>
+
+<h:body>
+    <h:form>
+        <div class="gold-purchase-page">
+            <h1 class="purchase-title">Beli Tabungan Emas</h1>
+            <p class="step-indicator">Langkah 2 dari 3 - Konfirmasi</p>
+
+            <div class="purchase-details">
+                <div class="section-title">Detail Transaksi</div>
+
+                <div class="purchase-option">
+                    <label>Nama Pemilik:</label>
+                    <p>#{emasBean.user.name}</p> <!-- ngambil dari Managed Bean -->
+                </div>
+                <div class="purchase-option">
+                    <label>Rekening Emas:</label>
+                    <p>#{emasBean.user.rekening}</p> <!-- ngambil dari Managed Bean -->
+                </div>
+                <div class="purchase-option">
+                    <label>Nominal Emas:</label>
+                    <p>#{emasBean.beliAmount/1461000} gram</p> <!-- ngambil dari Managed Bean -->
+                </div>
+
+                <div class="section-title">Detail Harga</div>
+
+                <div class="purchase-option">
+                    <label>Total Pembelian:</label>
+                    <p>Rp #{emasBean.beliAmount}</p> <!-- ngambil dari Managed Bean -->
+                </div>
+                <div class="purchase-option">
+                    <label>Biaya Administrasi:</label>
+                    <p>Gratis</p> <!-- Static -->
+                </div>
+                <div class="purchase-option">
+                    <label>Total Harga:</label>
+                    <p><strong>Rp #{emasBean.beliAmount}</strong></p> <!-- ngmbil dari Managed Bean -->
+                </div>
+
+                <h:commandButton value="Konfirmasi Pembelian" action="#{emasBean.beli}" class="btn next-btn" />
+            </div>
+        </div>
+    </h:form>
+
+</h:body>
+</html>
+
+
+<!--sesuaiin aja nanti ya sama pojo 🙏-->

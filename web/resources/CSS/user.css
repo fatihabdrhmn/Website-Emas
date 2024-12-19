@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --orange: #A1D6B2;
+    --light-gray: #f5f5f5;
+    --dark-gray: #333;
+    --black: #192a56;
+    --white: #fff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* All */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    transition: all .3s ease;
+}
+
+body {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+}
+
+h2, h3 {
+    color: var(--black);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Button Styles */
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--black);
+    border-radius: .8rem;
+    padding: .8rem 3rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+.btn:hover {
+    background: var(--orange);
+    letter-spacing: .1rem;
+    transform: translateY(-3px);
+}
+
+/* Header Section */
+.user-header {
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.user-header .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-header .user-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.user-header .user-details h2 {
+    font-size: 3rem;
+}
+
+.user-header .user-details p {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Balance Overview */
+.balance-overview {
+    padding: 2.5rem;
+    background-color: var(--white);
+    margin: 2rem 0;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.balance-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.balance-box h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.balance-box .balance {
+    font-size: 3rem;
+    color: var(--orange);
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.balance-box .balance-value {
+    font-size: 2.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.action-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.action-buttons .btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.8rem;
+    border-radius: 10px;
+}
+
+
+/* Transactions Section */
+.transactions {
+    padding: 2.5rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 3rem;
+}
+
+.transactions h3 {
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+}
+
+/* Table Styles */
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.transaction-table th, 
+.transaction-table td {
+    text-align: left;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.transaction-table th {
+    background-color: var(--light-gray);
+    font-weight: bold;
+    color: var(--black);
+}
+
+.transaction-table td {
+    color: var(--dark-gray);
+}
+
+.transaction-table tr:hover {
+    background-color: var(--orange);
+    color: var(--white);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+/* Footer Navigation */
+.footer-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-btn {
+    text-align: center;
+}
+
+.footer-link {
+    font-size: 1.6rem;
+    color: var(--dark-gray);
+    padding: 0.5rem 1rem;
+    display: block;
+    border-radius: 1rem;
+}
+
+.footer-link:hover {
+    color: var(--orange);
+    background-color: var(--light-gray);
+}
+
+
+@media (max-width: 768px) {
+    .user-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .user-header .user-img {
+        margin-bottom: 1rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .transaction-table th, .transaction-table td {
+        font-size: 1.4rem;
+    }
+}

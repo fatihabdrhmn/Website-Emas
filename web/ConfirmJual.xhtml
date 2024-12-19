@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" lang="en">
+
+<h:head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konfirmasi Jual Tabungan Emas</title>
+    <h:outputStylesheet library="CSS" name="ConfirmJual.css" />
+</h:head>
+
+<h:body>
+    <h:form>
+        <div class="gold-selling-page">
+            <h1 class="selling-title">Jual Tabungan Emas</h1>
+            <p class="step-indicator">Langkah 2 dari 3 - Konfirmasi</p>
+
+            <div class="selling-details">
+                <!-- Detail Penjualan -->
+                <div class="section-title">Detail Penjualan</div>
+                
+                <div class="selling-option">
+                    <label>Nama Pemilik:</label>
+                    <p>#{emasBean.user.name}</p> <!-- ngambil dari Managed Bean -->
+                </div>
+                <div class="selling-option">
+                    <label>Rekening Emas:</label>
+                    <p>#{emasBean.user.rekening}</p> <!-- ngambil dari Managed Bean -->
+                </div>
+                <div class="selling-option">
+                    <label>Nominal Emas:</label>
+                    <p>#{emasBean.jualAmount/1461000} gram</p> <!-- ngambil dari Managed Bean -->
+                </div>
+
+                <!-- Detail Penerima -->
+                <div class="section-title">Detail Penerima</div>
+                <div class="receiver-option">
+                    <div class="bank-logo">
+                        <img src="download.jpeg" alt="Logo Bank BRI" />
+                    </div>
+                    <div class="receiver-details">
+                        <label>#{sellBean.receiverBank}</label> <!-- Data diambil dari Managed Bean -->
+                        <p>#{sellBean.receiverName}</p> <!-- Data diambil dari Managed Bean -->
+                        <p>#{sellBean.receiverAccount}</p> <!-- Data diambil dari Managed Bean -->
+                    </div>
+                </div>
+
+                <!-- Detail Harga -->
+                <div class="section-title">Detail Harga</div>
+                
+                <div class="selling-option">
+                    <label>Total Penjualan:</label>
+                    <p>Rp #{emasBean.jualAmount}</p> <!-- Data diambil dari Managed Bean -->
+                </div>
+                <div class="selling-option">
+                    <label>Biaya Administrasi:</label>
+                    <p>Gratis</p>
+                </div>
+                <div class="selling-option">
+                    <label>Total Harga:</label>
+                    <p><strong>Rp #{emasBean.jualAmount}</strong></p> <!-- Data diambil dari Managed Bean -->
+                </div>
+
+                <h:commandButton value="Konfirmasi Pembelian" action="#{emasBean.jual}" class="btn next-btn" />
+            </div>
+        </div>
+    </h:form>
+</h:body>
+</html>

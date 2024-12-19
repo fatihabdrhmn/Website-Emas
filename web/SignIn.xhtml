@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login &amp; Sign Up</title>
+    <h:outputStylesheet library="CSS"  name="login.css"/>
+</h:head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Start your gold investment</h2>
+            <h3>Login to gold investment</h3>
+            
+            <!-- JSF form for login -->
+            <h:form class="signup-form">
+                <div class="input-box">
+                    <label for="email">E-mail</label>
+                    <h:inputText id="email" value="#{userBean.email}" required="true" >
+                        <f:passThroughAttribute name="placeholder" value="example@gmail.com"/>
+                    </h:inputText>
+                </div>
+                <div class="input-box">
+                    <label for="password">Password</label>
+                    <h:inputSecret id="password" value="#{userBean.password}" required="true">
+                        <f:passThroughAttribute name="placeholder" value="********"/>
+                    </h:inputSecret>
+                </div>
+                
+                <!-- JSF Button for login submission -->
+                <h:commandButton value="Sign in" action="#{userBean.login}" class="btn" />
+                
+                <div class="social-login">
+                    <p>or sign in with</p>
+                    <div class="social-icons">
+                        <button>
+                            <img src="images/Facebook.jpeg" alt="Facebook" />
+                        </button>
+                        <button>
+                            <img src="images/Google.jpeg" alt="Google" />
+                        </button>
+                    </div>
+                </div>
+            </h:form>
+
+            <p class="sign-in-text">Don't have an account? 
+                <a href="SignUp.xhtml">Sign up</a>
+            </p>
+        </div>
+        
+        <div class="image-container">
+            <img src="images/Consultores Financeiros Segurar Moedas Com Interesse Investidor Bem Sucedido Ou Empresário Consultoria Financeira Investimento E Poupança Ilustração Vetorial Moderna PNG , Empresário, Investir, Dinheiro I.jpeg" 
+                 alt="Background Image" />
+        </div>
+    </div>
+    <script>
+        // Show notification if there is an error message
+        
+        var errorMessage = "#{userBean.errorMessage}";
+        var successMessage = "#{userBean.successMessage}";
+        if (errorMessage) {
+            alert(errorMessage);
+        }
+        if (successMessage) {
+            alert(successMessage);
+        }
+    </script>
+</body>
+
+</html>

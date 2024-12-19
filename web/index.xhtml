@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- link to cdnjs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <!-- link to swiper from cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- link to sweetalert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+
+    <!-- box icon -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+
+    <!-- link to css -->
+    <h:outputStylesheet library="CSS" name="Gold.css" />
+
+    <title>Gold Invesment</title>
+</h:head>
+<body>
+    <!-- JSF Header -->
+    <h:form>
+        <header>
+            <h:outputLink value="#" class="Logo">
+                <i class='bx bx-money-withdraw'></i>Gold Invesment.
+            </h:outputLink>
+
+            <nav class="navbar">
+                <h:outputLink value="#home">Home</h:outputLink>
+                <h:outputLink value="#keunggulan">Advantage</h:outputLink>
+                <h:outputLink value="#about">About</h:outputLink>
+                <h:outputLink value="#reviews">Review</h:outputLink>
+               
+            </nav>
+
+            <div class="icons">
+                <i class="fas fa-bars" id="menu-bars"></i>
+                <h:commandLink action="SignIn?faces-redirect=true" class='bx bx-user'/>
+            </div>
+        </header>
+    </h:form>
+
+    <!-- JSF Home Section -->
+    <h:form>
+        <section class="home" id="home">
+            <div class="content">
+                <h3>Investasi Emas Untuk Masa Depan</h3>
+                <p>Temukan cara mudah dan aman untuk membeli emas dengan harga kompetitif, transparansi penuh, dan layanan cepat. Jadikan emas sebagai pilihan investasi masa depan Anda!</p>
+                <h:commandButton value="Mulai Sekarang!" action="SignIn?faces-redirect=true" class="btn" />
+            </div>
+            <div class="image">
+                <img src="images/wkwk.png" alt=""/>
+            </div>
+        </section>
+    </h:form>
+
+    <!-- Advantages Section -->
+        <section class="keunggulan" id="keunggulan">
+            <h3 class="sub-heading">Keunggulan Memilih Kami</h3>
+            <h1 class="heading">Alasan Memilih Kami</h1>
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="images/MoneyBag.png" alt="" />
+                    <div class="text">
+                        <h3>Harga Kompetitif</h3>
+                        <span>Kami menawarkan harga emas yang mengikuti pasar dengan update secara real-time.</span>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="images/Lock.png" alt="" />
+                    <div class="text">
+                        <h3>Keamanan Terjamin</h3>
+                        <span>Transaksi dilindungi dengan teknologi keamanan tinggi, memastikan aset Anda aman.</span>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="resources/images/image20.png" alt="" />
+                    <div class="text">
+                        <h3>Mulai Dari Rp.100.0000</h3>
+                        <span>Investasi dapat kamu mulai kapan saja tanpa harus mempunyai modal yang besar.</span>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="images/Globe.png" alt="" />
+                    <div class="text">
+                        <h3>Akses Global</h3>
+                        <span>Nikmati kemudahan bertransaksi dan memantau emas Anda kapan saja, di mana saja melalui platform digital kami, yang tersedia secara global.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+       <!-- about us -->
+        <section class="about" id="about">
+         <h3 class="sub-heading">About Us</h3>
+         <h1 class="heading">Why You Should Choose Us?</h1>
+
+         <div class="row">
+             <div class="image">
+                 <img src="images/About.jpeg" alt=""/>
+             </div>
+
+             <div class="content">
+                 <h3>tempat investasi ter-percaya</h3>
+                 <p>Di Gold Invesment, kami hadir untuk memberikan solusi investasi emas yang aman, mudah, dan terpercaya. 
+                     Kami percaya bahwa emas bukan hanya sekedar logam mulia, tetapi juga simbol keamanan finansial dan perlindungan nilai di masa depan. 
+                     Dengan pengalaman dan dedikasi di dunia investasi emas, kami berkomitmen untuk membantu setiap orang,</p>
+                 <p>mulai dari pemula hingga investor berpengalaman, untuk mengakses pasar emas secara transparan dan aman.</p>
+                 <div class="icon-container">
+                     <div class="icon">
+                         <i class="fas fa-dollar-sign"></i>
+                         <span>easy payment</span>
+                     </div>
+                     <div class="icon">
+                         <i class="fas fa-headset"></i>
+                         <span>10 AM - 10 PM</span>
+                     </div>
+                 </div>
+             </div>
+         </div>
+        </section>
+    
+       <!-- review -->
+        <section class="reviews" id="reviews">
+         <h3 class="sub-heading">Apa Yang Mereka katakan</h3>
+         <h1 class="heading">ulasan dari berbagai pengguna jasa kami</h1>
+
+         <div class="swiper mySwiper">
+             <div class="swiper-wrapper">
+                 <!-- Review 1 -->
+                 <div class="swiper-slide">
+                     <div class="review-box">
+                         <img src="images/chef.png" alt="Reviewer 1" class="reviewer-img"/>
+                         <p>"This restaurant is amazing! The food is delicious and the service is excellent."</p>
+                         <h4>John Doe</h4>
+                         <span>⭐⭐⭐⭐⭐</span>
+                     </div>
+                 </div>
+                 <!-- Review 2 -->
+                 <div class="swiper-slide">
+                     <div class="review-box">
+                         <img src="images/boy.jpeg" alt="Reviewer 2" class="reviewer-img"/>
+                         <p>"I had a wonderful experience. The ambiance is cozy and the staff is friendly."</p>
+                         <h4>Jane Smith</h4>
+                         <span>⭐⭐⭐⭐</span>
+                     </div>
+                 </div>
+                 <!-- Review 3 -->
+                 <div class="swiper-slide">
+                     <div class="review-box">
+                         <img src="images/bussines.jpeg" alt="Reviewer 2" class="reviewer-img"/>
+                         <p>"I had a wonderful experience. The ambiance is cozy and the staff is friendly."</p>
+                         <h4>Jane Smith</h4>
+                         <span>⭐⭐⭐⭐</span>
+                     </div>
+                 </div>
+
+                 <!-- Review 4 -->
+                 <div class="swiper-slide">
+                     <div class="review-box">
+                         <img src="images/WomanCam.jpeg" alt="Reviewer 1" class="reviewer-img"/>
+                         <p>"This restaurant is amazing! The food is delicious and the service is excellent."</p>
+                         <h4>John Doe</h4>
+                         <span>⭐⭐⭐⭐⭐</span>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+    <!-- Footer Section -->
+    <h:form>
+        <section class="footer">
+            <div class="box-container">
+                <div class="box">
+                    <h3>Location</h3>
+                    <h:outputLink value="#">Depok</h:outputLink>
+                </div>
+                <div class="box">
+                    <h3>Links</h3>
+                    <h:outputLink value="#">home</h:outputLink>
+                    <h:outputLink value="#">keunggulan</h:outputLink>
+                    <h:outputLink value="#">about</h:outputLink>
+                    <h:outputLink value="#">review</h:outputLink>
+                    <h:outputLink value="#">lokasi</h:outputLink>
+                </div>
+                <div class="box">
+                    <h3>Contact Info</h3>
+                    <h:outputLink value="#">+62 1188-9763-0091</h:outputLink>
+                    <h:outputLink value="#">+62 0098-4324-5353</h:outputLink>
+                    <h:outputLink value="#">inirestoku@gmail.com</h:outputLink>
+                </div>
+            </div>
+            <div class="credit">Project 3 2024, <span> By Team 2</span></div>
+        </section>
+    </h:form>
+    
+    <!-- js swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- JS and Swiper Integration -->
+    <script src="js/Restoku.js"></script>
+</body>
+</html>
