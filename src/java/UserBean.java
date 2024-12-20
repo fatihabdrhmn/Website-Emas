@@ -42,6 +42,8 @@ public class UserBean {
     public void setUser(User user) {
         this.user = user; // Assuming User has a setAddress method
     }
+
+    //woi p//
     
     private String hashPassword(String password) {
         try {
